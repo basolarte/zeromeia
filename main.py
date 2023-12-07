@@ -2,10 +2,10 @@ from telethon.sync import TelegramClient
 from telethon.tl.types import InputMediaPhoto, InputMediaDocument
 import sqlite3
 import sys
-conn = sqlite3.connect('caminhodobanco')
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM videos order by id desc")
-rows = cursor.fetchall()
+# conn = sqlite3.connect('caminhodobanco')
+# cursor = conn.cursor()
+# cursor.execute("SELECT * FROM videos order by id desc")
+# rows = cursor.fetchall()
 
 api_id = 'xxxxxxxxx'
 api_hash = 'xxxxxxxxxxxxxx'
@@ -13,6 +13,7 @@ api_hash = 'xxxxxxxxxxxxxx'
 channel_username = '@docanal'
 
 with TelegramClient('session_name', api_id, api_hash) as client:
+    sys.exit(1)
     for row in rows:
         id = row[0]
         title = row[1]
